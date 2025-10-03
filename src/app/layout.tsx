@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon/windows-96.ico", // path relative to public
     shortcut: "/favicon/windows-96.ico",
-    apple: "/favicon/windows-96.png", // optional for Apple devices
+    apple: "/favicon/windows-96 .png", // optional for Apple devices
   },
 };
 
