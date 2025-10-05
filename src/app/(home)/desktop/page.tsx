@@ -88,9 +88,6 @@ const Desktop = () => {
                 </div>
               ))}
             </div>
-
-            {/* on start menu click what will happen */}
-            <StartMenu />
           </div>
 
           {/* actions on click of desktop icons */}
