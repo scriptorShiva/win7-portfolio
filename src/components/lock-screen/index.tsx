@@ -38,7 +38,7 @@ const LockScreenCard = () => {
 
         {/* Bottom small hint */}
         <p className="text-white/50 text-sm mt-4">
-          Hint - username in small-case{" "}
+          Hint - username in smallcase without whitespace
         </p>
       </div>
     </>
