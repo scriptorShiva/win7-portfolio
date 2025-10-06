@@ -11,12 +11,13 @@ import {
   FaHandPaper,
 } from "react-icons/fa";
 import { set } from "react-hook-form";
+import PDFContent from "./PDFContent";
 
 const AdobeAcrobat = () => {
   const [isMinimized, setIsMinimized] = React.useState(false);
   const [isMaximized, setIsMaximized] = React.useState(false);
   const [isClosed, setIsClosed] = React.useState(false);
-  const [position, setPosition] = React.useState({ x: 300, y: 50 });
+  const [position, setPosition] = React.useState({ x: 400, y: 50 });
   const [size, setSize] = React.useState({ width: 700, height: 500 });
 
   if (isClosed) return null;
@@ -94,9 +95,9 @@ const AdobeAcrobat = () => {
         {/* Menu Bar */}
         <div className="flex items-center gap-3 px-3 h-6 text-[13px] bg-[#d4d0c8] border-b border-gray-400">
           {["File", "Edit", "View", "Document", "Tools", "Window", "Help"].map(
-            (item) => (
+            (item, index) => (
               <span
-                key={item}
+                key={index}
                 className="hover:bg-[#d4d0c8] text-gray-600 hover:text-white px-1 rounded-sm cursor-default"
               >
                 {item}
@@ -146,13 +147,7 @@ const AdobeAcrobat = () => {
         </div>
 
         {/* Document Area */}
-        <div className="flex-1 bg-[#bdbdbd] flex items-center justify-center">
-          <div className="bg-white w-[80%] h-[80%] shadow-md flex flex-col items-center justify-center border border-gray-400">
-            <p className="text-gray-600 text-sm">
-              Adobe Reader 7.0 Mock PDF Area
-            </p>
-          </div>
-        </div>
+        <PDFContent />
 
         {/* Status Bar */}
         <div className="flex items-center justify-between text-xs bg-[#d4d0c8] border-t border-gray-400 px-3 h-6">

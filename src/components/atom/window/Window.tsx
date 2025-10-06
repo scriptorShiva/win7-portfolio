@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { Rnd } from "react-rnd";
 import Win7TitleButton from "./Win7TitleButton";
@@ -6,20 +6,21 @@ import WinToolbar from "./WinToolbar";
 import WindowSidebar from "./WindowSidebar";
 import WindowContent from "./WindowContent";
 import WindowFooter from "./WindowFooter";
-import { DesktopProgramDataType } from "@/types";
+import { DesktopProgramType } from "@/types";
 
 interface WindowProps {
-  program: DesktopProgramDataType;
+  program: DesktopProgramType;
   Sidebar?: React.ReactNode; // optional custom sidebar
   Content?: React.ReactNode; // optional custom main content
+  Footer?: React.ReactNode;
 }
 
-const Window = ({ program, Sidebar, Content }: WindowProps) => {
+const Window = ({ program, Sidebar, Content, Footer }: WindowProps) => {
   // states
   const [isMinimized, setIsMinimized] = React.useState(false);
   const [isMaximized, setIsMaximized] = React.useState(false);
   const [isClosed, setIsClosed] = React.useState(false);
-  const [position, setPosition] = React.useState({ x: 300, y: 50 });
+  const [position, setPosition] = React.useState({ x: 200, y: 50 });
   const [size, setSize] = React.useState({ width: 700, height: 500 });
 
   // if closed return null
@@ -75,22 +76,18 @@ const Window = ({ program, Sidebar, Content }: WindowProps) => {
       </section>
 
       {/* Body Section */}
-      <div className="flex flex-1 bg-gradient-to-b from-[#f9fbfd] to-[#eaf2fa] overflow-hidden">
+      <div className="flex flex-1 bg-gradient-to-b from-[#f9fbfd] to-[#eaf2fa] overflow-auto h-full win-scrollbar">
         {/* Sidebar */}
-        {Sidebar ? (
-          Sidebar
-        ) : (
-          <div className="w-64 bg-[#e1ecf9] p-3">Default Sidebar</div>
-        )}
+        {Sidebar && Sidebar}
 
         {/* Content Area */}
-        <main className="flex-1 bg-gradient-to-b from-[#fdfefe] to-[#eaf2fa] p-2 overflow-auto">
-          {Content ? Content : <div>Default Content</div>}
+        <main className="flex-1 bg-gradient-to-b from-[#fdfefe] to-[#eaf2fa] p-2 overflow-auto h-full win-scrollbar">
+          {Content && Content}
         </main>
       </div>
 
       {/* Status Bar */}
-      <WindowFooter files={program.contentData} />
+      {Footer && Footer}
     </Rnd>
   );
 };

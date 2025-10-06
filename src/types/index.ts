@@ -19,3 +19,11 @@ export type DesktopProgramDataType = {
   sideBarItems: SideBarSection[];
   contentData: ContentItem[];
 };
+
+export type DesktopProgramType = {
+  id: string;
+  src: string;
+  w: number;
+  h: number;
+  title: string;
+};

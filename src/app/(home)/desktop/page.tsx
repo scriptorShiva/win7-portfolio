@@ -2,7 +2,6 @@
 
 import React, { useEffect } from "react";
 import Taskbar from "@/components/desktop/Taskbar";
-import StartMenu from "@/components/desktop/StartMenu";
 import { DesktopPrograms as DesktopProgramsList } from "@/constants/desktop";
 import AdobeAcrobat from "@/components/atom/adobe-acrobat";
 import WindowModal from "@/components/desktop/WindowModal";
@@ -100,7 +99,7 @@ const Desktop = () => {
             }
 
             return desktopPrograms[program.id as ProgramKey] ? (
-              <WindowModal key={program.id} program={program} />
+              <WindowModal key={program.id} programInfo={program} />
             ) : null;
           })}
         </div>
