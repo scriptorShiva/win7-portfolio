@@ -5,23 +5,41 @@ import MyComputerSidebar from "../Programs/my-computer/MyComputerSidebar";
 import MyComputerContent from "../Programs/my-computer/MyComputerContent";
 import React from "react";
 import { DesktopProgramType } from "@/types";
-import { DesktopProgramData } from "@/constants/desktop";
+import {
+  DesktopMyComputerProgramData,
+  DesktopMyRecycleBinProgramData,
+} from "@/constants/desktop";
+import MyBinContent from "../Programs/recycle-bin/MyBinContent";
 
 interface WindowProps {
   programInfo: DesktopProgramType;
 }
 
 const WindowModal = ({ programInfo }: WindowProps) => {
-  const programData = DesktopProgramData.find((p) => p.id === programInfo.id);
   let SidebarComponent = null;
   let ContentComponent = null;
 
   switch (programInfo.id) {
     case "myPc":
       SidebarComponent = (
-        <MyComputerSidebar sidebarItems={programData!.sidebarItems ?? []} />
+        <MyComputerSidebar
+          sidebarItems={DesktopMyComputerProgramData!.sidebarItems ?? []}
+        />
       );
-      ContentComponent = <MyComputerContent files={programData!.content} />;
+      ContentComponent = (
+        <MyComputerContent files={DesktopMyComputerProgramData!.content} />
+      );
+      break;
+
+    case "recycleBin":
+      SidebarComponent = (
+        <MyComputerSidebar
+          sidebarItems={DesktopMyRecycleBinProgramData!.sidebarItems ?? []}
+        />
+      );
+      ContentComponent = (
+        <MyBinContent files={DesktopMyRecycleBinProgramData!.content ?? []} />
+      );
       break;
 
     default:

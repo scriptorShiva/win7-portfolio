@@ -45,7 +45,7 @@ const MyComputerContent = ({ files }: props) => {
             <tr
               key={index}
               className="hover:bg-[#dce7f3] cursor-default text-[#2b4c6f] border-b border-[#d7e2ef]"
-              onClick={() => handleOpenFile(file)}
+              onDoubleClick={() => handleOpenFile(file)}
             >
               <td className="py-1 px-2 flex items-center gap-2">
                 <Image

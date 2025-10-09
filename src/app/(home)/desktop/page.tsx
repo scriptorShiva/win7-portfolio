@@ -64,7 +64,9 @@ const Desktop = () => {
                 >
                   <div
                     className="flex flex-col items-center group-hover:bg-[rgba(0,120,215,0.3)] group-active:bg-[rgba(0,120,215,0.6)] rounded-md px-2 py-1 transition"
-                    onClick={() => handleProgramOnClick(icon.id as ProgramKey)}
+                    onDoubleClick={() =>
+                      handleProgramOnClick(icon.id as ProgramKey)
+                    }
                   >
                     <img
                       src={icon.src}

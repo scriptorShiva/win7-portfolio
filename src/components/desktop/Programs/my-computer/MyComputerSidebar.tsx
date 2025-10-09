@@ -18,7 +18,9 @@ interface Props {
 
 const MyComputerSidebar = ({ sidebarItems }: Props) => {
   // Track multiple open sections using a Set of indices
-  const [openSections, setOpenSections] = useState<Set<number>>(new Set());
+  const [openSections, setOpenSections] = useState<Set<number>>(
+    new Set([0, 1, 2])
+  );
 
   const toggleSection = (index: number) => {
     setOpenSections((prev) => {
