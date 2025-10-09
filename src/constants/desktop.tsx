@@ -138,7 +138,7 @@ export const DesktopMyRecycleBinProgramData = {
   id: "recycleBin",
   sidebarItems: [
     {
-      title: "Projects",
+      title: "Live Links",
       items: [
         {
           title: "My first HTML webpage",
@@ -165,6 +165,11 @@ export const DesktopMyRecycleBinProgramData = {
           link: "https://scriptorshiva.github.io/Live_Weather/",
           icon: <MdOutlineRocketLaunch />,
         },
+      ],
+    },
+    {
+      title: "Github Links",
+      items: [
         {
           title: "Animation Project",
           link: "https://github.com/scriptorShiva/Capture_Moments",
@@ -173,6 +178,11 @@ export const DesktopMyRecycleBinProgramData = {
         {
           title: "Realtime Chat System",
           link: "https://github.com/scriptorShiva/Instant_Talk",
+          icon: <FaGithub />,
+        },
+        {
+          title: "Order System (frontend)",
+          link: "https://github.com/scriptorShiva/OrderHouse_frontend",
           icon: <FaGithub />,
         },
         {
