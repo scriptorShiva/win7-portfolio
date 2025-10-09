@@ -3,6 +3,7 @@ import ConfirmationPopup from "@/components/atom/confirmation-popup";
 import React from "react";
 import { GrDeploy } from "react-icons/gr";
 import { FaGithubAlt } from "react-icons/fa6";
+import Image from "next/image";
 
 interface fileType {
   name: string;
@@ -11,6 +12,7 @@ interface fileType {
   link: string;
   about?: string;
   icon?: React.ReactNode;
+  iconSrc?: string;
 }
 
 interface props {
@@ -39,11 +41,13 @@ const MyBinContent = ({ files }: props) => {
               >
                 <BinCard key={index}>
                   <div>
-                    {isLinkContainGitHub(file.link) ? (
-                      <FaGithubAlt size={40} className="text-gray-800" />
-                    ) : (
-                      <GrDeploy size={40} className="text-[#0077b6]" />
-                    )}
+                    <Image
+                      src={file.iconSrc!}
+                      alt={file.name}
+                      width={40}
+                      height={40}
+                      className="text-[#0077b6]"
+                    />
                   </div>
                   <div className="flex flex-col justify-center">
                     <div className="text-sm font-medium  text-gray-800">
@@ -78,11 +82,13 @@ const MyBinContent = ({ files }: props) => {
           <div>
             <div className="flex gap-4 pl-4 items-center">
               <div>
-                {isLinkContainGitHub(selectedFile.link) ? (
-                  <FaGithubAlt size={80} className="text-gray-800" />
-                ) : (
-                  <GrDeploy size={80} className="text-[#0077b6]" />
-                )}
+                <Image
+                  src={selectedFile.iconSrc!}
+                  alt={selectedFile.name}
+                  width={400}
+                  height={400}
+                  className="text-[#0077b6]"
+                />
               </div>
 
               <div className="flex flex-col justify-start space-y-1 overflow-hidden">

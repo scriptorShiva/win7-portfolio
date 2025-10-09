@@ -201,6 +201,7 @@ export const DesktopMyRecycleBinProgramData = {
       link: "https://shiva1507.github.io/HtmlSite.github.io/",
       about:
         "Hey! This is what I have built first time as a website. At that time I barely introduced with HTML only.. So, I can remember I wateched tutorial from mySirG YT channel and after learning some tags I just want to apply it. At that time we mostly introduced with C ,C++ which you know how it feels to code on TurboC. Its intresting to see first time of coding usecase in visual way.",
+      iconSrc: "/icons/network.png",
     },
     {
       name: "Initial Website in CSS",
@@ -209,6 +210,7 @@ export const DesktopMyRecycleBinProgramData = {
       link: "https://shiva1507.github.io/ResumeDesign.github.io/",
       about:
         "This One I created after I bought one course from udemy by instructor Angelena Yu. I was very excited it was just awesome to see the magic of css and how it can be used to create a website. I was very happy to see the changes I made in the design and how it looks like. It was really really fun to create something from scratch.",
+      iconSrc: "/icons/network.png",
     },
     {
       name: "My Intro to CSS Animations",
@@ -217,6 +219,7 @@ export const DesktopMyRecycleBinProgramData = {
       link: "https://scriptorshiva.github.io/EV/",
       about:
         "After I build somepages from scratch I was very much interested in CSS animations mostly because I got introduced with DevEd YT channel.. It was really really fun to create something which moves on the page. Also, I am a kind of person who loves drawing and art stuff.By learning from his channel about SVG animations I just applied to so many things and I really enjoyed it.",
+      iconSrc: "/icons/network.png",
     },
     {
       name: "Music Player",
@@ -225,6 +228,7 @@ export const DesktopMyRecycleBinProgramData = {
       link: "https://scriptorshiva.github.io/Melody_Player/",
       about:
         "Created a music player with different song tracks that helps you to light your mood while coding. In this project I learned about ReactJS and how to use it. I also learned about useState, useEffect, useRef, and props.",
+      iconSrc: "/icons/network.png",
     },
     {
       name: "Live Weather App",
@@ -233,6 +237,7 @@ export const DesktopMyRecycleBinProgramData = {
       link: "https://scriptorshiva.github.io/Live_Weather/",
       about:
         "After I learned about frontend I got introduced with backend concepts like NodeJS and PUG. I created a weather app that shows the live weather of any city. At that time I was not aware with we can connect frontend to backend. So, from any blog or tutorial I just built entire weather app in nodejs with the help of template engines like PUG.",
+      iconSrc: "/icons/network.png",
     },
     {
       name: "Animation Project",
@@ -241,6 +246,7 @@ export const DesktopMyRecycleBinProgramData = {
       link: "https://github.com/scriptorShiva/Capture_Moments",
       about:
         "An animated nice looking photography website template designed to showcase the art of visual apealing through seamless animations. As I already discussed I am a big fan of animations so I just tried to build a complete website from GSAP Animation library",
+      iconSrc: "/icons/github-file.png",
     },
     {
       name: "Realtime Chat System",
@@ -249,6 +255,7 @@ export const DesktopMyRecycleBinProgramData = {
       link: "https://github.com/scriptorShiva/Instant_Talk",
       about:
         "This is a basic website for creating a real-time chat system. It enables multiple users to communicate with each other in real time without storing their messages. Fun fact I don't know how to use Database at that time. So, just used Nodejs and Socket.io for that. haha",
+      iconSrc: "/icons/github-file.png",
     },
     {
       name: "Order System (frontend)",
@@ -257,6 +264,7 @@ export const DesktopMyRecycleBinProgramData = {
       link: "https://github.com/scriptorShiva/OrderHouse_frontend",
       about:
         "Here, I have built the frontend of an order system with ReactJS. Here, I use micro frontend architecture. Built with resuable components and also State management. How to pass props between components. How to use context api as global store to avoid prop drillings etc.",
+      iconSrc: "/icons/github-file.png",
     },
     {
       name: "Order System (backend)",
@@ -265,6 +273,7 @@ export const DesktopMyRecycleBinProgramData = {
       link: "https://github.com/scriptorShiva/OrderHouse_backend",
       about:
         "By this time I will know how to use Database. I get my first job as a developer and I was really excited to learn more. So, I built an order system with NodeJS. Utilize some concepts like JWT, Validations using JOI libarary, ORM and many more.",
+      iconSrc: "/icons/github-file.png",
     },
   ],
 };
