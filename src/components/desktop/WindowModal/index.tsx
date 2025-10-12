@@ -13,9 +13,10 @@ import MyProjectsContent from "../Programs/projects/MyProjectsContent";
 
 interface WindowProps {
   programInfo: DesktopProgramType;
+  onClose: () => void;
 }
 
-const WindowModal = ({ programInfo }: WindowProps) => {
+const WindowModal = ({ programInfo, onClose }: WindowProps) => {
   let SidebarComponent = null;
   let ContentComponent = null;
 
@@ -62,6 +63,7 @@ const WindowModal = ({ programInfo }: WindowProps) => {
       program={programInfo}
       Sidebar={SidebarComponent}
       Content={ContentComponent}
+      onClose={onClose}
     />
   );
 };

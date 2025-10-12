@@ -94,6 +94,7 @@ const Desktop = () => {
           {/* actions on click of desktop icons */}
           {/* Open windows */}
           {DesktopProgramsList.map((program) => {
+            const id = program.id as ProgramKey;
             if (program.id === "resume") {
               return desktopPrograms[program.id as ProgramKey] ? (
                 <AdobeAcrobat key={program.id} />
@@ -101,7 +102,13 @@ const Desktop = () => {
             }
 
             return desktopPrograms[program.id as ProgramKey] ? (
-              <WindowModal key={program.id} programInfo={program} />
+              <WindowModal
+                key={program.id}
+                programInfo={program}
+                onClose={() =>
+                  setDesktopPrograms((prev) => ({ ...prev, [id]: false }))
+                }
+              />
             ) : null;
           })}
         </div>

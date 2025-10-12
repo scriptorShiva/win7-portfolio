@@ -9,18 +9,25 @@ interface WindowProps {
   Sidebar?: React.ReactNode; // optional custom sidebar
   Content?: React.ReactNode; // optional custom main content
   Footer?: React.ReactNode;
+  onClose?: () => void;
 }
 
-const Window = ({ program, Sidebar, Content, Footer }: WindowProps) => {
+const Window = ({
+  program,
+  Sidebar,
+  Content,
+  Footer,
+  onClose,
+}: WindowProps) => {
   // states
   const [isMinimized, setIsMinimized] = React.useState(false);
   const [isMaximized, setIsMaximized] = React.useState(false);
-  const [isClosed, setIsClosed] = React.useState(false);
+  //const [isClosed, setIsClosed] = React.useState(false);
   const [position, setPosition] = React.useState({ x: 200, y: 50 });
   const [size, setSize] = React.useState({ width: 700, height: 500 });
 
   // if closed return null
-  if (isClosed) return null;
+  //if (isClosed) return null;
 
   return (
     <Rnd
@@ -47,7 +54,7 @@ const Window = ({ program, Sidebar, Content, Footer }: WindowProps) => {
           <Win7TitleButton
             onMinimize={() => {
               setIsMinimized(true);
-              setIsClosed(true);
+              // setIsClosed(true);
             }}
             onMaximize={() => {
               if (!isMaximized) {
@@ -63,7 +70,7 @@ const Window = ({ program, Sidebar, Content, Footer }: WindowProps) => {
                 setPosition({ x: 200, y: 100 });
               }
             }}
-            onClose={() => setIsClosed(true)}
+            onClose={() => onClose && onClose()}
           />
         </div>
 
