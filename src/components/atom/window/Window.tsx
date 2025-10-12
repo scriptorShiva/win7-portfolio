@@ -23,8 +23,8 @@ const Window = ({
   const [isMinimized, setIsMinimized] = React.useState(false);
   const [isMaximized, setIsMaximized] = React.useState(false);
   //const [isClosed, setIsClosed] = React.useState(false);
-  const [position, setPosition] = React.useState({ x: 200, y: 50 });
-  const [size, setSize] = React.useState({ width: 700, height: 500 });
+  const [position, setPosition] = React.useState({ x: 300, y: 40 });
+  const [size, setSize] = React.useState({ width: 750, height: 500 });
 
   // if closed return null
   //if (isClosed) return null;
@@ -36,8 +36,8 @@ const Window = ({
       enableResizing={!isMaximized}
       size={isMaximized ? { width: "100%", height: "100%" } : size}
       position={isMaximized ? { x: 0, y: 0 } : position}
-      minWidth={isMaximized ? "100%" : 800}
-      minHeight={isMaximized ? "100%" : 600}
+      minWidth={isMaximized ? "100%" : 750}
+      minHeight={isMaximized ? "100%" : 500}
       onDragStop={(_e, d) => setPosition({ x: d.x, y: d.y })}
       onResizeStop={(_e, _direction, ref, _delta, position) => {
         setSize({ width: ref.offsetWidth, height: ref.offsetHeight });
