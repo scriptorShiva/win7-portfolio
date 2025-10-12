@@ -1,5 +1,3 @@
-import WindowContent from "@/components/atom/window/WindowContent";
-import WindowSidebar from "@/components/atom/window/WindowSidebar";
 import Window from "@/components/atom/window/Window";
 import MyComputerSidebar from "../Programs/my-computer/MyComputerSidebar";
 import MyComputerContent from "../Programs/my-computer/MyComputerContent";
@@ -8,8 +6,10 @@ import { DesktopProgramType } from "@/types";
 import {
   DesktopMyComputerProgramData,
   DesktopMyRecycleBinProgramData,
+  DesktopProjectsProgramData,
 } from "@/constants/desktop";
 import MyBinContent from "../Programs/recycle-bin/MyBinContent";
+import MyProjectsContent from "../Programs/projects/MyProjectsContent";
 
 interface WindowProps {
   programInfo: DesktopProgramType;
@@ -39,6 +39,17 @@ const WindowModal = ({ programInfo }: WindowProps) => {
       );
       ContentComponent = (
         <MyBinContent files={DesktopMyRecycleBinProgramData!.content ?? []} />
+      );
+      break;
+
+    case "projects":
+      SidebarComponent = (
+        <MyComputerSidebar
+          sidebarItems={DesktopProjectsProgramData!.sidebarItems ?? []}
+        />
+      );
+      ContentComponent = (
+        <MyProjectsContent files={DesktopProjectsProgramData!.content ?? []} />
       );
       break;
 

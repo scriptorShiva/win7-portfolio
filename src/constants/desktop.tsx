@@ -32,7 +32,7 @@ export const DesktopPrograms = [
     src: "/icons/folder.png",
     w: 60,
     h: 60,
-    title: "Projects",
+    title: "Current Projects",
   },
   {
     id: "resume",
@@ -278,70 +278,250 @@ export const DesktopMyRecycleBinProgramData = {
   ],
 };
 
-export const DesktopProgramData = [
-  {
-    id: "projects",
-    sidebarItems: [],
-    content: [
-      {
-        title: "My first HTML webpage",
-        subTitle: "Only HTML",
-        createdAt: "12/2020",
-        link: "https://shiva1507.github.io/HtmlSite.github.io/",
-      },
-      {
-        name: "Initial Website in CSS",
-        subTitle: "HTML|CSS",
-        createdAt: "03/2021",
-        link: "https://shiva1507.github.io/ResumeDesign.github.io/",
-      },
-      {
-        name: "My Intro to CSS Animations",
-        subTitle: "HTML|CSS Animations",
-        createdAt: "10/2022",
-        link: "https://scriptorshiva.github.io/EV/",
-      },
-      {
-        name: "Music Player",
-        subTitle: "ReactJS",
-        date: "03/2023",
-        link: "https://scriptorshiva.github.io/Melody_Player/",
-      },
-      {
-        name: "Live Weather App",
-        subTitle: "NodeJS, PUG (Template Engine)",
-        date: "04/2023",
-        link: "https://scriptorshiva.github.io/Live_Weather/",
-      },
-      {
-        name: "Animation Project",
-        subTitle: "GSAP Library",
-        date: "05/2023",
-        link: "https://github.com/scriptorShiva/Capture_Moments",
-      },
-      {
-        name: "Realtime Chat System",
-        subTitle: "Nodejs|Socket.io",
-        date: "08/2023",
-        link: "https://github.com/scriptorShiva/Instant_Talk",
-      },
-      {
-        name: "Order System (frontend)",
-        subTitle: "ReactJS",
-        date: "08/2023",
-        link: "https://github.com/scriptorShiva/OrderHouse_frontend",
-      },
-      {
-        name: "Order System (backend)",
-        subTitle: "NodeJS",
-        date: "08/2023",
-        link: "https://github.com/scriptorShiva/OrderHouse_backend",
-      },
-    ],
-  },
-];
+export const DesktopProjectsProgramData = {
+  id: "projects",
+  sidebarItems: [
+    {
+      title: "Microservices System (Ongoing) ",
+      items: [
+        {
+          title: "Auth Service",
+          link: "https://github.com/scriptorShiva/mernbyte-auth-service",
+          icon: <FaGithub />,
+        },
+        {
+          title: "Admin Dashboard",
+          link: "https://github.com/scriptorShiva/mernbyte-admin-dashboard",
+          icon: <FaGithub />,
+        },
+        {
+          title: "Catalog Service",
+          link: "https://github.com/scriptorShiva/mernbyte-catalog-service",
+          icon: <FaGithub />,
+        },
+        {
+          title: "Client/Storefront Service",
+          link: "https://github.com/scriptorShiva/mernbyte-client-storefront",
+          icon: <FaGithub />,
+        },
+        {
+          title: "Kong Gateway Docker Compose",
+          link: "https://github.com/scriptorShiva/kong-gateway-docker-compose",
+          icon: <FaGithub />,
+        },
+        {
+          title: "Kafka Broker Docker Compose",
+          link: "https://github.com/scriptorShiva/kafka-broker-docker-compose",
+          icon: <FaGithub />,
+        },
+      ],
+    },
+    {
+      title: "LocalMind",
+      items: [
+        {
+          title: "Local RAG-based Semantic Chat",
+          link: "https://github.com/scriptorShiva/LocalMind",
+          icon: <FaGithub />,
+        },
+      ],
+    },
+    {
+      title: "Check Chariot",
+      items: [
+        {
+          title: "Check Chariot FE",
+          link: "https://github.com/scriptorShiva/checkChariot_fe",
+          icon: <FaGithub />,
+        },
+        {
+          title: "Check Chariot BE",
+          link: "https://github.com/scriptorShiva/checkChariot_be",
+          icon: <FaGithub />,
+        },
+      ],
+    },
+    {
+      title: "MY CV",
+      items: [
+        {
+          title: "WINDOWS7 Theme",
+          link: "https://github.com/scriptorShiva/win7-portfolio",
+          icon: <MdOutlineRocketLaunch />,
+        },
+      ],
+    },
+  ],
+  content: [
+    {
+      name: "Microservices System (Ongoing)",
+      subTitle:
+        "Nodejs | Reactjs | MongoDb | Postgresql | Docker | KONG | Kafka | AWS S3",
+      createdAt: "08/2025",
+      type: "folder",
+      children: [
+        {
+          name: "Auth Service",
+          subTitle: "Nodejs | PostgresSQL | JWT",
+          createdAt: "08/2025",
+          type: "file",
+          link: "https://github.com/scriptorShiva/mernbyte-auth-service",
+          images: [
+            "/projects/mernbyte/as-a.png",
+            "/projects/mernbyte/as-b.png",
+            "/projects/mernbyte/as-c.png",
+            "/projects/mernbyte/as-d.png",
+          ],
+        },
+        {
+          name: "Admin Dashboard",
+          subTitle: "Reactjs | Ant Design",
+          createdAt: "08/2025",
+          type: "file",
+          link: "https://github.com/scriptorShiva/mernbyte-admin-dashboard",
+          images: [
+            "/projects/mernbyte/ad-a.png",
+            "/projects/mernbyte/ad-b.png",
+            "/projects/mernbyte/ad-c.png",
+            "/projects/mernbyte/ad-d.png",
+            "/projects/mernbyte/ad-e.png",
+            "/projects/mernbyte/ad-f.png",
+          ],
+        },
+        {
+          name: "Catalog Service",
+          subTitle: "MonogDB | Nodejs",
+          createdAt: "08/2025",
+          type: "file",
+          link: "https://github.com/scriptorShiva/mernbyte-catalog-service",
+          images: ["/projects/mernbyte/cs-a.png"],
+        },
+        {
+          name: "Client/Storefront Service",
+          subTitle: "Next.js | Shadcn UI | Tailwind",
+          createdAt: "08/2025",
+          type: "file",
+          link: "https://github.com/scriptorShiva/mernbyte-client-storefront",
+          images: [
+            "/projects/mernbyte/sf-a.png",
+            "/projects/mernbyte/sf-b.png",
+            "/projects/mernbyte/sf-c.png",
+            "/projects/mernbyte/sf-d.png",
+            "/projects/mernbyte/sf-e.png",
+          ],
+        },
+        {
+          name: "Kong Gateway Docker Compose",
+          subTitle: "Docker",
+          createdAt: "08/2025",
+          type: "file",
+          link: "https://github.com/scriptorShiva/kong-gateway-docker-compose",
+        },
+        {
+          name: "Kafka Broker Docker Compose",
+          subTitle: "Docker",
+          createdAt: "08/2025",
+          type: "file",
+          link: "https://github.com/scriptorShiva/kafka-broker-docker-compose",
+        },
+      ],
+    },
+    {
+      name: "LocalMind",
+      subTitle: "Nodejs  | BULLMQ | QDRANT DB | Ollma | Langchain",
+      createdAt: "06/2025",
+      type: "folder",
+      children: [
+        {
+          name: "Local RAG-based Semantic Chat",
+          subTitle: "Nodejs  | BULLMQ | QDRANT DB | Ollma | Langchain",
+          createdAt: "06/2025",
+          type: "file",
+          link: "https://github.com/scriptorShiva/LocalMind",
+          images: [
+            "/projects/rag/rag-a.webp",
+            "/projects/rag/rag-b.webp",
+            "/projects/rag/rag-c.webp",
+            "/projects/rag/rag-d.png",
+            "/projects/rag/rag-e.png",
+            "/projects/rag/rag-f.png",
+          ],
+        },
+      ],
+    },
+    {
+      name: "Check Chariot",
+      subTitle: "Nodejs | Reactjs | SocketIO",
+      createdAt: "04/2025",
+      type: "folder",
+      children: [
+        {
+          name: "Check Chariot FE",
+          subTitle: "Reactjs | Chess.js",
+          createdAt: "04/2025",
+          type: "file",
+          link: "https://github.com/scriptorShiva/checkChariot_fe",
+          images: [
+            "/projects/chess/chess-a.png",
+            "/projects/chess/chess-b.png",
+            "/projects/chess/chess-c.png",
+          ],
+        },
+        {
+          name: "Check Chariot BE",
+          subTitle: "Nodejs | SocketIO",
+          createdAt: "04/2025",
+          type: "file",
+          link: "https://github.com/scriptorShiva/checkChariot_be",
+          images: [
+            "/projects/chess/chess-a.png",
+            "/projects/chess/chess-b.png",
+            "/projects/chess/chess-c.png",
+          ],
+        },
+      ],
+    },
+    {
+      name: "MY CV",
+      subTitle: "Reactjs",
+      createdAt: "10/2025",
+      type: "folder",
+      children: [
+        {
+          name: "WINDOWS7 Theme",
+          subTitle: "Reactjs",
+          createdAt: "10/2025",
+          type: "file",
+          link: "https://github.com/scriptorShiva/win7-portfolio",
+        },
+      ],
+    },
+  ],
+};
 
 export const AboutMeNotepadContent = `My name is Shiva Pal, and my journey into the world of technology began three years ago when I started my first job as a web developer. Before that, I completed my Bachelor’s in Computer Applications, where I learned the fundamentals of computing and developed a deep curiosity about how technology has evolved over time. I’ve always loved understanding things from the ground up — exploring the “why” behind everything and diving into the history of how technology came to be what it is today.
 
    Over time, I’ve realized that learning comes from two sides — what we do for fun and what we do professionally. Both paths have their own lessons: one keeps us motivated, the other teaches us discipline and the art of creating for an audience. Outside of tech, I enjoy exploring creative hobbies. I love playing the bansuri (an Indian flute), learning new artistic skills, and experimenting with things like music, drawing and painting and lot more...
 `;
+
+export const socialMediaLink = [
+  {
+    title: "Github",
+    link: "https://github.com/scriptorShiva",
+    icon: <FaGithub size={25} />,
+  },
+  {
+    title: "Linkedin",
+    link: "https://www.linkedin.com/in/shiva-pal/",
+    icon: <FaLinkedin size={25} />,
+  },
+  {
+    title: "Medium",
+    link: "https://medium.com/@shivapal108941",
+    icon: <FaMedium size={25} />,
+  },
+  {
+    title: "In Development....",
+    link: "https://github.com/scriptorShiva",
+  },
+];

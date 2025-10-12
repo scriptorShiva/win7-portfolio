@@ -64,3 +64,12 @@ body {
 .win-scrollbar::-webkit-scrollbar-thumb:hover {
   background-color: #a0a0a0; /* Hover effect */
 }
+
+/* Global CSS (e.g., globals.css or styles.css) */
+.window-layer {
+  pointer-events: none; /* default: clicks pass through */
+}
+
+.window-layer > * {
+  pointer-events: auto; /* only child (the window content) gets clicks */
+}
