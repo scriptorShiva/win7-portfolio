@@ -1,11 +1,7 @@
-import React, { useEffect } from "react";
-import Image from "next/image";
+import React from "react";
 import { Rnd } from "react-rnd";
 import Win7TitleButton from "./Win7TitleButton";
 import WinToolbar from "./WinToolbar";
-import WindowSidebar from "./WindowSidebar";
-import WindowContent from "./WindowContent";
-import WindowFooter from "./WindowFooter";
 import { DesktopProgramType } from "@/types";
 
 interface WindowProps {
@@ -28,7 +24,7 @@ const Window = ({ program, Sidebar, Content, Footer }: WindowProps) => {
 
   return (
     <Rnd
-      bounds="window"
+      bounds="body"
       disableDragging={isMaximized}
       enableResizing={!isMaximized}
       size={isMaximized ? { width: "100%", height: "100%" } : size}
