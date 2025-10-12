@@ -10,6 +10,7 @@ import { IoMdSkipBackward } from "react-icons/io";
 import { RiArrowGoForwardFill } from "react-icons/ri";
 import { RiArrowGoBackFill } from "react-icons/ri";
 import { FaGithub } from "react-icons/fa6";
+import { createPortal } from "react-dom";
 
 type ImageViewerProps = {
   imagesToView: string[];
@@ -42,7 +43,11 @@ const ImageViewer = ({
     return () => clearInterval(timer);
   }, [isPlaying]);
 
-  return (
+  // Portal container
+  const portalRoot = typeof document !== "undefined" ? document.body : null;
+  if (!portalRoot) return null;
+
+  return createPortal(
     <Rnd
       bounds="window"
       disableDragging={isMaximized}
@@ -58,10 +63,11 @@ const ImageViewer = ({
       }}
       style={{
         display: isMinimized ? "none" : "block",
+        zIndex: 1000,
       }}
       className=" shadow-md bg-[#ece9d8] p-2 bg-gradient-to-b from-[#9bb7D3] via-[#acc5e0] to-[#b4cde6] border-b border-[#6c8eb6] rounded-t-[8px] "
     >
-      <div className="flex flex-col w-full h-full">
+      <div className="flex flex-col w-full h-full overflow-hidden">
         {/* Title Bar */}
         <div className="flex items-center justify-between bg-[#d4d0c8] border-b border-gray-500 h-6 text-xs">
           <div className="flex items-center justify-between w-full bg-gradient-to-b from-[#9bb7D3] via-[#acc5e0] to-[#b4cde6] border-b border-[#6c8eb6] rounded-t-[8px] text-gray-800 pl-2">
@@ -119,7 +125,7 @@ const ImageViewer = ({
         </div>
 
         {/* Content */}
-        <div className="flex-1 overflow-hidden max-h-[450px] bg-white flex items-center justify-center p-2 rounded-md">
+        <div className="flex-1 overflow-hidden bg-white flex items-center justify-center p-2 rounded-md">
           {imagesToView ? (
             <Image
               src={imagesToView[currentImageIndex]}
@@ -223,7 +229,8 @@ const ImageViewer = ({
           </div>
         </div>
       </div>
-    </Rnd>
+    </Rnd>,
+    portalRoot
   );
 };
 

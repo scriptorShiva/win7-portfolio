@@ -95,7 +95,7 @@ const TaskBar = () => {
                   <div className="fixed bottom-16 right-25 w-72 bg-white border border-gray-400 rounded shadow-lg text-black text-sm animate-slide-in z-50">
                     <BaloonNotification
                       heading="Hi there! 👋 I am Shiva Pal."
-                      message="I am a software developer. This is my portfolio website, still a work in progress. I will keep updating it over time. It's a fun project, so I tried to give it a Win7 vibe. Enjoy!"
+                      message="I am a software developer. This is my portfolio website, still a work in progress... and has some bugs. I will keep updating it over time. It's a fun project, so I tried to give it a Win7 vibe. Enjoy!"
                       iconSrc="/icons/hello.png"
                     />
                   </div>

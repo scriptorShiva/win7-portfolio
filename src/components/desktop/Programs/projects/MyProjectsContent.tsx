@@ -20,8 +20,8 @@ interface props {
 const MyProjectsContent = ({ files }: props) => {
   const [openCurrentFolder, setOpenCurrentFolder] =
     React.useState<fileType | null>(null);
-  const [openImageViewer, setOpenImageViewer] = React.useState<fileType | null>(
-    null
+  const [openImageViewers, setOpenImageViewers] = React.useState<fileType[]>(
+    []
   );
 
   const handleClick = (file: fileType) => {
@@ -30,8 +30,14 @@ const MyProjectsContent = ({ files }: props) => {
       setOpenCurrentFolder(file);
     }
     if (file.type === "file") {
-      setOpenImageViewer(file);
+      //setOpenImageViewer(file);
+      // Open a new ImageViewer instance
+      setOpenImageViewers((prev) => [...prev, file]);
     }
+  };
+
+  const handleCloseViewer = (fileToClose: fileType) => {
+    setOpenImageViewers((prev) => prev.filter((file) => file !== fileToClose));
   };
 
   return (
@@ -104,13 +110,15 @@ const MyProjectsContent = ({ files }: props) => {
 
       {/* open image viewer */}
       {/* Image Viewer Window */}
-      {openImageViewer && (
+      {/* Render multiple ImageViewers */}
+      {openImageViewers.map((file) => (
         <ImageViewer
-          imagesToView={openImageViewer.images!}
-          githubRedirectUrl={openImageViewer.link!}
-          onClose={() => setOpenImageViewer(null)}
+          key={file.name + file.createdAt} // unique key
+          imagesToView={file.images!}
+          githubRedirectUrl={file.link!}
+          onClose={() => handleCloseViewer(file)}
         />
-      )}
+      ))}
     </>
   );
 };
