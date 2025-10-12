@@ -1,6 +1,6 @@
 "use client";
 
-import React, {
+import {
   createContext,
   ReactNode,
   useContext,
@@ -99,7 +99,9 @@ export const WindowProvider = ({ children }: { children: ReactNode }) => {
     const savedTabs = localStorage.getItem("open_windows");
     if (savedTabs) {
       const parsedTabs = JSON.parse(savedTabs);
-      setWindows(parsedTabs.map((w: any) => ({ ...w, content: null })));
+      setWindows(
+        parsedTabs.map((w: WindowStateType) => ({ ...w, content: null }))
+      );
     }
   }, []);
 
@@ -107,7 +109,8 @@ export const WindowProvider = ({ children }: { children: ReactNode }) => {
   // So after reload you windows comes back in same state
   useEffect(() => {
     // removing content data on store to localstorage as we don't store component in ls
-    const dataToSave = windows.map(({ content, ...rest }) => rest);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const dataToSave = windows.map(({ content: _content, ...rest }) => rest);
     localStorage.setItem("open_windows", JSON.stringify(dataToSave));
   }, [windows]);
 

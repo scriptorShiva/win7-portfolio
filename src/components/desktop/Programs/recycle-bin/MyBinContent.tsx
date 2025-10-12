@@ -1,8 +1,6 @@
 import BinCard from "@/components/atom/bin-card";
 import ConfirmationPopup from "@/components/atom/confirmation-popup";
 import React from "react";
-import { GrDeploy } from "react-icons/gr";
-import { FaGithubAlt } from "react-icons/fa6";
 import Image from "next/image";
 
 interface fileType {
@@ -21,12 +19,11 @@ interface props {
 
 const MyBinContent = ({ files }: props) => {
   const [selectedFile, setSelectedFile] = React.useState<fileType | null>(null);
-  const [confirmationPopupClose, setConfirmationPopupClose] =
-    React.useState<Boolean>(false);
+  const [, setConfirmationPopupClose] = React.useState<boolean>(false);
 
-  const isLinkContainGitHub = (link: string) => {
-    return link.includes("https://github.com/");
-  };
+  // const isLinkContainGitHub = (link: string) => {
+  //   return link.includes("https://github.com/");
+  // };
   return (
     <>
       <div className="grid gap-4">
@@ -70,9 +67,11 @@ const MyBinContent = ({ files }: props) => {
           onClose={() => setSelectedFile(null)}
         >
           <div className="flex gap-4 px-4 py-2 ">
-            <img
+            <Image
               src={"/icons/recycle-bin.png"}
               alt={selectedFile.name}
+              width={40}
+              height={40}
               className="w-12 h-12 rounded-md border border-gray-200"
             />
             <div className="text-sm font-medium text-gray-700">

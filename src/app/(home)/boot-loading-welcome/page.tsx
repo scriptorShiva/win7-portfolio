@@ -13,7 +13,7 @@ const BootLoadingWelcome = () => {
     setTimeout(() => {
       router.push("/desktop");
     }, 2000);
-  }, []);
+  }, [router]);
 
   return (
     <div>

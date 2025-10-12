@@ -5,6 +5,7 @@ import Taskbar from "@/components/desktop/Taskbar";
 import { DesktopPrograms as DesktopProgramsList } from "@/constants/desktop";
 import AdobeAcrobat from "@/components/atom/adobe-acrobat";
 import WindowModal from "@/components/desktop/WindowModal";
+import Image from "next/image";
 
 type ProgramKey = "myPc" | "recycleBin" | "projects" | "resume";
 
@@ -68,7 +69,7 @@ const Desktop = () => {
                       handleProgramOnClick(icon.id as ProgramKey)
                     }
                   >
-                    <img
+                    <Image
                       src={icon.src}
                       width={icon.w}
                       height={icon.h}
@@ -97,7 +98,12 @@ const Desktop = () => {
             const id = program.id as ProgramKey;
             if (program.id === "resume") {
               return desktopPrograms[program.id as ProgramKey] ? (
-                <AdobeAcrobat key={program.id} />
+                <AdobeAcrobat
+                  key={program.id}
+                  onClose={() =>
+                    setDesktopPrograms((prev) => ({ ...prev, [id]: false }))
+                  }
+                />
               ) : null;
             }
 

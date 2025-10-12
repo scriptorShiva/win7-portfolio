@@ -17,7 +17,7 @@ interface props {
 }
 
 const MyComputerContent = ({ files }: props) => {
-  const [openFile, setOpenFile] = React.useState<String | null>(null);
+  const [openFile, setOpenFile] = React.useState<string | null>(null);
   //method
   const handleOpenFile = (file: fileType) => {
     setOpenFile(file.docType);

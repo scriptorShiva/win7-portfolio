@@ -41,7 +41,7 @@ const ImageViewer = ({
       setCurrentImageIndex((prev) => (prev + 1) % imagesToView.length);
     }, 1000);
     return () => clearInterval(timer);
-  }, [isPlaying]);
+  }, [isPlaying, imagesToView.length]);
 
   // Portal container
   const portalRoot = typeof document !== "undefined" ? document.body : null;

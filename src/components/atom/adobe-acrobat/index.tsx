@@ -10,17 +10,17 @@ import {
   FaSearchMinus,
   FaHandPaper,
 } from "react-icons/fa";
-import { set } from "react-hook-form";
 import PDFContent from "./PDFContent";
 
-const AdobeAcrobat = () => {
-  const [isMinimized, setIsMinimized] = React.useState(false);
+type Props = {
+  onClose: () => void;
+};
+
+const AdobeAcrobat = ({ onClose }: Props) => {
+  //const [isMinimized, setIsMinimized] = React.useState(false);
   const [isMaximized, setIsMaximized] = React.useState(false);
-  const [isClosed, setIsClosed] = React.useState(false);
   const [position, setPosition] = React.useState({ x: 400, y: 50 });
   const [size, setSize] = React.useState({ width: 700, height: 500 });
-
-  if (isClosed) return null;
 
   return (
     <Rnd
@@ -32,8 +32,8 @@ const AdobeAcrobat = () => {
       position={isMaximized ? { x: 0, y: 0 } : position}
       minWidth={isMaximized ? "100%" : 800}
       minHeight={isMaximized ? "100%" : 600}
-      onDragStop={(e, d) => setPosition({ x: d.x, y: d.y })}
-      onResizeStop={(e, direction, ref, delta, position) => {
+      onDragStop={(_e, d) => setPosition({ x: d.x, y: d.y })}
+      onResizeStop={(_e, _direction, ref, _delta, position) => {
         setSize({ width: ref.offsetWidth, height: ref.offsetHeight });
         setPosition(position);
       }}
@@ -56,8 +56,7 @@ const AdobeAcrobat = () => {
             <div className="flex items-center">
               <button
                 onClick={() => {
-                  setIsMinimized(true);
-                  setIsClosed(true);
+                  onClose();
                 }}
                 className="w-7 h-6 bg-[#c0c0c0] hover:bg-[#dcdcdc] border border-gray-600 flex items-center justify-center"
               >
@@ -83,7 +82,7 @@ const AdobeAcrobat = () => {
                 <Square size={10} />
               </button>
               <button
-                onClick={() => setIsClosed(true)}
+                onClick={onClose}
                 className="w-7 h-6 bg-[#d9534f] hover:bg-[#c9302c] border border-gray-700 flex items-center justify-center"
               >
                 <X size={12} />

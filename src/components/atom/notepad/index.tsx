@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { Rnd } from "react-rnd";
-import { Minus, Square, X } from "lucide-react";
 import Image from "next/image";
 import Win7TitleButton from "../window/Win7TitleButton";
 
@@ -10,7 +9,7 @@ type props = {
 };
 
 const Notepad = ({ contentData }: props) => {
-  const [isMinimized, setIsMinimized] = React.useState(false);
+  const [, setIsMinimized] = React.useState(false);
   const [isMaximized, setIsMaximized] = React.useState(false);
   const [isClosed, setIsClosed] = React.useState(false);
   const [position, setPosition] = React.useState({ x: 200, y: 100 });
@@ -28,8 +27,8 @@ const Notepad = ({ contentData }: props) => {
       position={isMaximized ? { x: 0, y: 0 } : position}
       minWidth={400}
       minHeight={300}
-      onDragStop={(e, d) => setPosition({ x: d.x, y: d.y })}
-      onResizeStop={(e, direction, ref, delta, pos) => {
+      onDragStop={(_e, d) => setPosition({ x: d.x, y: d.y })}
+      onResizeStop={(_e, _direction, ref, _delta, pos) => {
         setSize({ width: ref.offsetWidth, height: ref.offsetHeight });
         setPosition(pos);
       }}
