@@ -13,14 +13,7 @@ export default function PasswordTextBox() {
   const router = useRouter();
   const [isShaking, setIsShaking] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    formState: { errors },
-    setError,
-  } = useForm<FormData>();
+  const { register, handleSubmit, reset, setError } = useForm<FormData>();
 
   // methods
   const onSubmit = (data: FormData) => {

@@ -56,8 +56,8 @@ const ImageViewer = ({
       position={position}
       minWidth={400}
       minHeight={300}
-      onDragStop={(e, d) => setPosition({ x: d.x, y: d.y })}
-      onResizeStop={(e, direction, ref, delta, pos) => {
+      onDragStop={(_e, d) => setPosition({ x: d.x, y: d.y })}
+      onResizeStop={(_e, _direction, ref, _delta, pos) => {
         setSize({ width: ref.offsetWidth, height: ref.offsetHeight });
         setPosition(pos);
       }}

@@ -38,8 +38,8 @@ const Window = ({
       position={isMaximized ? { x: 0, y: 0 } : position}
       minWidth={isMaximized ? "100%" : 800}
       minHeight={isMaximized ? "100%" : 600}
-      onDragStop={(e, d) => setPosition({ x: d.x, y: d.y })}
-      onResizeStop={(e, direction, ref, delta, position) => {
+      onDragStop={(_e, d) => setPosition({ x: d.x, y: d.y })}
+      onResizeStop={(_e, _direction, ref, _delta, position) => {
         setSize({ width: ref.offsetWidth, height: ref.offsetHeight });
         setPosition(position);
       }}

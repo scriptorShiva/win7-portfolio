@@ -20,8 +20,8 @@ const ConfirmationPopup = ({ title, onClose, children }: props) => {
       position={position}
       minWidth={400}
       minHeight={300}
-      onDragStop={(e, d) => setPosition({ x: d.x, y: d.y })}
-      onResizeStop={(e, direction, ref, delta, pos) => {
+      onDragStop={(_e, d) => setPosition({ x: d.x, y: d.y })}
+      onResizeStop={(_e, _direction, _ref, _delta, pos) => {
         setPosition(pos);
       }}
       className={`border border-[#7a99b8] rounded-t-[8px] shadow-lg bg-[#f3f6fa] flex flex-col transition-all h-full duration-100 ease-in-out 
